@@ -1,0 +1,13 @@
+diff --git a/src/exec.c b/src/exec.c
+index 87354d4..7552f8d 100644
+--- a/src/exec.c
++++ b/src/exec.c
+@@ -112,6 +112,8 @@ shellexec(char **argv, const char *path, int idx)
+ 	char **envp;
+ 	int exerrno;
+ 
++	/* pass exit status of last process to executed program */
++	setvarint("DOLLARSIGN_QUESTIONMARK_ALL_SPELLED_OUT", exitstatus, VEXPORT);
+ 	envp = environment();
+ 	if (strchr(argv[0], '/') != NULL) {
+ 		tryexec(argv[0], argv, envp);
