@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
 
+#Remember to do:
+#  sudo sh -c 'echo 3 > /proc/sys/vm/drop_caches'
+#before running benchmark
+
+
 from sys import argv
 from subprocess import run
 from time import time_ns
